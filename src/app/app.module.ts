@@ -20,6 +20,12 @@ import { UserRegistrationFormComponent } from './user-registration-form/user-reg
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { MatIconModule } from '@angular/material/icon';
+import { GenreViewComponent } from './genre-view/genre-view.component';
+import { MovieDescriptionComponent } from './movie-description/movie-description.component';
+import { DirectorViewComponent } from './director-view/director-view.component';
+import { UserFavoritesComponent } from './user-favorites/user-favorites.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -33,7 +39,12 @@ const appRoutes: Routes = [
     UserRegistrationFormComponent,
     UserLoginFormComponent,
     MovieCardComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    GenreViewComponent,
+    MovieDescriptionComponent,
+    DirectorViewComponent,
+    UserFavoritesComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +57,8 @@ const appRoutes: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
