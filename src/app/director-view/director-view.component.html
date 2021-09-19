@@ -1,1 +1,9 @@
-<p>director-view works!</p>
+<div>
+    <mat-dialog-content>
+        {{ data.name }}
+        <img src={{data.imageUrl}} alt={{data.name}} />
+    
+        <p>{{ data.birth }} - {{ data.death }}</p>
+        <p>{{ data.bio }}</p>
+    </mat-dialog-content>
+</div>
