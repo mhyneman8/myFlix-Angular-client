@@ -89,7 +89,7 @@ export class FetchApiDataService {
     );
   }
 
-  // Get favorite moives for user
+  // Get favorite movies for user
   userFavoriteMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     const userName = localStorage.getItem('user');
