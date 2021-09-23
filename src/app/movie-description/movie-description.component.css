@@ -1,0 +1,18 @@
+/* color scheme:
+    Morning sky #cae4db
+    honey #dcae1d
+    cerulean #00303f
+    mist #7a9d96 */
+
+.container {
+    padding: 10px;
+    color: #03003f !important;
+    width: 80%;
+    justify-content: center;
+    margin: 10px;
+}
+
+h2 {
+    color: #dcae1d;
+    margin-bottom: 5px;
+}

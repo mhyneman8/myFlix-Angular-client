@@ -1,0 +1,41 @@
+/* color scheme:
+    Morning sky #cae4db
+    honey #dcae1d
+    cerulean #00303f
+    mist #7a9d96 */
+
+.main-page {
+    background-color: #7a9d96;
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    margin: 105px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.welcome-btns {
+    background-color: #dca31d;
+    color: #00303f;
+    width: 119px;
+    height: 43px;
+    font-size: 18px;
+}
+
+.welcome-btns:hover {
+    background-color: #cae4db;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.title {
+    margin-top: 200px;
+    margin-bottom: 70px;
+    font-size: 40px;
+    text-align: center;
+    color: #cae4db;
+    font-weight: 600;
+    -webkit-text-stroke: .5px #00303f;
+}
