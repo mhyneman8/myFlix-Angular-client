@@ -29,6 +29,7 @@ import { MovieDescriptionComponent } from './movie-description/movie-description
 import { DirectorViewComponent } from './director-view/director-view.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
     DirectorViewComponent,
     UserProfileComponent,
     NavBarComponent,
+    UpdateUserComponent,
     
   ],
   imports: [

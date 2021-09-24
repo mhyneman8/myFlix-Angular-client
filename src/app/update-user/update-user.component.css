@@ -1,0 +1,14 @@
+/* color scheme:
+    Morning sky #cae4db
+    honey #dcae1d
+    cerulean #00303f
+    mist #7a9d96 */
+
+.mat-card-header,
+.mat-card-title {
+    color: #00303f;
+}
+
+.update-btn {
+    background-color: #dcae1d;
+}
