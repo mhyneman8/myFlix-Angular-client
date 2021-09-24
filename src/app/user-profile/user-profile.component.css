@@ -1,0 +1,25 @@
+/* color scheme:
+    Morning sky #cae4db
+    honey #dcae1d
+    cerulean #00303f
+    mist #7a9d96 */
+
+.profile-body {
+    margin: 150px auto;
+    text-align: center;
+    background-color: #7a9d96;
+    width: 400px;
+    border: 2px solid #cae4db;
+    padding: 30px;
+}
+
+h4 {
+    color: #00303f;
+    margin: 5px auto;
+    margin-top: 15px;
+    font-size: 20px;
+} 
+
+p {
+    color:#cae4db;
+}
