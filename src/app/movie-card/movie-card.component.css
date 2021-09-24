@@ -53,4 +53,5 @@ img {
 .mat-icon {
     float: right;
     margin-right: 18px;
+    cursor: pointer;
 }

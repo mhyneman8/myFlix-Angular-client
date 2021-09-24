@@ -11,6 +11,7 @@ mat-toolbar {
     right: 0;
     background-color: #7a9d96;
     width: 100%;
+    border-bottom: 2px solid #cae4db;
 }
 
 span {
