@@ -1,3 +1,5 @@
+// Problem: navigation buttons get pushed off screen at a certain point
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // import { FetchApiDataService } from '../fetch-api-data.service';
@@ -20,11 +22,13 @@ export class NavBarComponent implements OnInit {
   }
 
   logout(): void {
-    localStorage.clear();
-    this.router.navigate(['welcome']);
-    this.snackBar.open("User has been logged out.", "OK", {
-      duration: 2000,
-    });
+    if (confirm('Are you sure you want to log out?')) {
+      localStorage.clear();
+      this.router.navigate(['welcome']);
+      this.snackBar.open("User has been logged out.", "OK", {
+        duration: 2000,
+      });
+    }
   }
   
 }
