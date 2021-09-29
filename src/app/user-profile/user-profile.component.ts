@@ -1,5 +1,7 @@
 // Problems: delete user does not redirect to Welcome
 //   after updating the profile view doesn't show any info
+    // birthday isn't showing up
+    // favorite movies aren't showing up
 
 import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';

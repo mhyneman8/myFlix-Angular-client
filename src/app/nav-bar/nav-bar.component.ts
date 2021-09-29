@@ -1,4 +1,5 @@
 // Problem: navigation buttons get pushed off screen at a certain point
+    // add search
 
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
