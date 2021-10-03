@@ -2,6 +2,7 @@
 //   after updating the profile view doesn't show any info
     // birthday isn't showing up
     // favorite movies aren't showing up
+    // update user button to open update dialog
 
 import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
@@ -20,7 +21,15 @@ import { WelcomePageComponent } from '../welcome-page/welcome-page.component'
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-  @Input() userDetails = { Username: '', Password: '', Email: '', BirthDate: '' }
+
+  /**
+   * gets user details with input
+   */
+  @Input() userDetails = { 
+    Username: '', 
+    Password: '', 
+    Email: '', 
+    BirthDate: '' }
   
   users: any = {};
   movies: any = {};
@@ -37,6 +46,9 @@ export class UserProfileComponent implements OnInit {
     this.getUser();
   }
 
+  /**
+   * gets user
+   */
   getUser(): void {
     this.fetchApiData.user().subscribe((result) => {
       this.users = result;
@@ -44,6 +56,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * user deregisters
+   */
   deleteUser(): void {
     if (confirm('This can\'t be undone, are you sure?')) {
       this.fetchApiData.deleteUser().subscribe(() => {
@@ -56,6 +71,9 @@ export class UserProfileComponent implements OnInit {
     }
   }
 
+  /**
+   * Opens dialog to update user
+   */
   editUser(): void {
     // this.fetchApiData.editUser(this.userDetails).subscribe((result) => {
 
@@ -70,6 +88,9 @@ export class UserProfileComponent implements OnInit {
     // });
   }
 
+  /**
+   * Gets users favorite movies
+   */
   favoriteMovies(): void {
     this.fetchApiData.moviesList().subscribe((result: any) => {
       this.movies = result;
@@ -77,12 +98,21 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * filters through full movie list to find favorites
+   * @returns list of favorite movies
+   */
   filterFavorites(): void {
     this.favorites = this.movies.filter((movie: any) => 
       this.users.FavoriteMovies.includes(movie._id));
     return this.favorites;
   }
   
+  /**
+   * Removes movie from favorites
+   * @param _id of movie
+   * @param title of movie
+   */
   deleteFavorite(_id: string, title: string): void {
     this.fetchApiData.deleteFavoriteMovie(_id).subscribe(() => {
       this.snackBar.open(
@@ -96,6 +126,9 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens user update dialog
+   */
   openUpdateDialog(): void {
     this.dialog.open(UpdateUserComponent, {
       width: '280px'
