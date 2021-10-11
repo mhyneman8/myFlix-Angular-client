@@ -3,12 +3,13 @@ import { catchError } from 'rxjs/internal/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 
-const apiUrl = 'https://myflix788.herokuapp.com/'
+const apiUrl = 'https://myflix788.herokuapp.com/';
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class FetchApiDataService {
   constructor(private http: HttpClient) { }
 
@@ -33,7 +34,7 @@ export class FetchApiDataService {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies', {
       headers: new HttpHeaders({
-        Authorization: 'Bearer ' + tokenize,
+        Authorization: 'Bearer ' + token,
       })
     }).pipe(map(this.extractResponseData), 
       catchError(this.handleError));
@@ -92,7 +93,13 @@ export class FetchApiDataService {
   userFavoriteMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     const userName = localStorage.getItem('user');
-    return this.http.get(apiUrl + `users/${userName}/movies`)
+    return this.http.get(apiUrl + `users/${userName}/movies`, {
+      headers: new HttpHeaders({
+        Authorization: 'Bearer ' + token,
+      })
+    }).pipe(map(this.extractResponseData),
+        catchError(this.handleError)
+    );
   }
 
 
