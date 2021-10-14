@@ -89,7 +89,7 @@ export class FetchApiDataService {
     );
   }
 
-  // Get favorite moives for user
+  // Get favorite movies for user
   userFavoriteMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     const userName = localStorage.getItem('user');
@@ -118,7 +118,7 @@ export class FetchApiDataService {
 
   // Edit user
   editUser(userDetails: any): Observable<any> {
-    const token = localStorage.getIem('token');
+    const token = localStorage.getItem('token');
     const userName = localStorage.getItem('user');
     return this.http.put(apiUrl + `users/${userName}`, userDetails, {
       headers: new HttpHeaders({

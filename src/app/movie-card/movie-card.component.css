@@ -1,0 +1,57 @@
+/* color scheme:
+    Morning sky #cae4db
+    honey #dcae1d
+    cerulean #00303f
+    mist #7a9d96 */
+
+.mat-card {
+    background-color: #7a9d96;
+    text-align: center;
+    margin-top: 140px;
+}
+
+.mat-card-title {
+    color: #00303f;
+    /* justify-content: center; */
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.mat-card-header {
+    justify-content: center;
+    height: 75px;
+    line-height: normal;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.mat-card-subtitle {
+    color: #cae4db;
+    font-size: 12px;
+    text-align: center;
+}
+
+.mat-card-actions {
+    color: #cae4db;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.mat-button {
+    display: block;
+    margin: 0 !important;
+}
+
+img {
+    width: 154px;
+    height: 218px;
+    margin-top: 10px;
+}
+
+.mat-icon {
+    float: right;
+    margin-right: 18px;
+    cursor: pointer;
+}

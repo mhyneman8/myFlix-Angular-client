@@ -1,4 +1,6 @@
+
 // Problem: fill in favorite heart if its a favorite
+
 
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
