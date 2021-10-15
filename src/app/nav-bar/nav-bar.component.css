@@ -1,0 +1,87 @@
+/* color scheme:
+    Morning sky #cae4db
+    honey #dcae1d
+    cerulean #00303f
+    mist #7a9d96 */
+
+
+mat-toolbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #7a9d96;
+    width: 100vw;
+    border-bottom: 2px solid #cae4db;
+}
+
+span {
+    margin-left: 10vw;
+    font-size: 30px;
+    color: #00303f;
+}
+
+button {
+    background-color: #dcae1d;
+    margin-left: 5px;
+    border-radius: 3px;
+}
+.buttons {
+    position: relative;
+    float: right;
+    left: 60vw;
+    right: 10px;
+}
+
+.dropdown {
+    display: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 1vw;
+    border-radius: 5px;
+    /* background-color: none; */
+    min-width: 6.25rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+@media all and (max-width: 715px) {
+    .buttons {
+        display: none;
+    }
+    
+    .dropdown {
+        display: inline-block;
+        position: fixed;
+        left: 90vw;
+    }
+   
+    .dropdown-content button {
+        color: #00303f;
+        padding: 4px;
+        text-decoration: none;
+        display: block;
+        text-align: right;
+        min-width: 65px;
+    }
+
+    .dropdown-content button:hover {
+        background-color: #cae4db;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .menu-icon:hover {
+        opacity: 0.5;
+    }
+}
+
+.search {
+    margin-top: 80px;
+    position: fixed;
+    margin-left: 20px;
+}
