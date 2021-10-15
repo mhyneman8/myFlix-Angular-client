@@ -1,9 +1,9 @@
-// Problem: navigation buttons get pushed off screen at a certain point
+// Problem: 
     // add search
 
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import { FetchApiDataService } from '../fetch-api-data.service';
+import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -12,9 +12,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-
+  movies: any[] = [];
   constructor(
-    // public fetchApiData: FetchApiDataService,
+    public fetchApiData: FetchApiDataService,
     public router: Router,
     public snackBar: MatSnackBar
   ) { }

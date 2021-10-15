@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { MovieDescriptionComponent } from '../movie-description/movie-description.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movie-card',
@@ -21,11 +22,21 @@ export class MovieCardComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialog: MatDialog,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
+    private route: ActivatedRoute,
     ) { }
 
   ngOnInit(): void {
-    this.getMovies();
+    // this.getMovies();
+    this.route.params.subscribe(params => {
+      if(params.searchTerm)
+       { this.fetchApiData.moviesList().subscribe((resp: any) => {
+          this.movies = this.moviesList.filter(movies => {
+          movies.name.toLowerCase().includes(params.searchTerm.toLowerCase())});
+        }, else
+         { getMovies();}
+    })
+      
   }
 
   getMovies(): void {
