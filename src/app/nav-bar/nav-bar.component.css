@@ -10,12 +10,12 @@ mat-toolbar {
     top: 0;
     right: 0;
     background-color: #7a9d96;
-    width: 100%;
+    width: 100vw;
     border-bottom: 2px solid #cae4db;
 }
 
 span {
-    margin-left: 20px;
+    margin-left: 10vw;
     font-size: 30px;
     color: #00303f;
 }
@@ -26,8 +26,10 @@ button {
     border-radius: 3px;
 }
 .buttons {
-    position: fixed;
-    left: 78%;
+    position: relative;
+    float: right;
+    left: 60vw;
+    right: 10px;
 }
 
 .dropdown {
@@ -45,7 +47,7 @@ button {
     z-index: 2;
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 715px) {
     .buttons {
         display: none;
     }

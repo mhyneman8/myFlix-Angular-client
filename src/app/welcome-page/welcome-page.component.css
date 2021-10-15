@@ -18,6 +18,7 @@
 .welcome-btns {
     background-color: #dca31d;
     color: #00303f;
+    border: 1px solid #00303f;
     width: 119px;
     height: 43px;
     font-size: 18px;
@@ -37,7 +38,7 @@
     margin-bottom: 70px;
     font-size: 40px;
     text-align: center;
-    color: #cae4db;
+    color: #ffffff;
     font-weight: 600;
     -webkit-text-stroke: .5px #00303f;
 }
