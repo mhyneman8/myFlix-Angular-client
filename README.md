@@ -53,7 +53,8 @@ This site uses Angular to build the client-side for an application based on its 
 | `id`      | `string` | **Required**. Id of item to fetch |
 
 
-
+## Run App
+ng --serve open
   
 ## Dependencies
 - @angular/animations: "~12.2.0",
