@@ -1,7 +1,5 @@
 <app-nav-bar></app-nav-bar>
 
-<app-search></app-search>
-
 <div style="display: flex;">
 
     <mat-card *ngFor="let movie of movies; let i=index;" style="flex: 1 1 auto;">
@@ -16,7 +14,7 @@
 
                 <button
                     mat-button
-                    (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.Death)"
+                    (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.Death, movie.Director.ImageUrl)"
                 >
                     Directed By: {{movie.Director.Name}}
                 </button>
@@ -35,11 +33,25 @@
                     Synopsis
                 </button>
             
-                <mat-icon
+                <!-- <mat-icon
                     class="favorite-button"
                     (click)="addMovieToFavorites(movie._id)"
                 >
+                    favorite -->
+                    <!-- favorite_border -->
+                <!-- </mat-icon> -->
+
+                <mat-icon *ngIf="!favMovieStatus(movies._id)" 
+                    (click)="addMovieToFavorites(movies._id)" 
+                    class="favorite-button"
+                >
                     favorite_border
+                </mat-icon>
+                <mat-icon *ngIf="favMovieStatus(movie._id)" 
+                    (click)="removeFromFavorites(movie._id, movie.Title)" 
+                    class="favorite-button-active"
+                >
+                    favorite
                 </mat-icon>
                 
             </mat-card-actions>
