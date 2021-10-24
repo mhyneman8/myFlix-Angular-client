@@ -40,18 +40,19 @@ export class UserProfileComponent implements OnInit {
   getUser(): void {
     this.fetchApiData.user().subscribe((result) => {
       this.users = result;
-      console.log(this.users);
+      this.favoriteMovies();
     });
   }
 
   deleteUser(): void {
     if (confirm('This can\'t be undone, are you sure?')) {
-      this.fetchApiData.deleteUser().subscribe(() => {
+      this.fetchApiData.deleteUser().subscribe((resp: any) => {
         localStorage.clear();
-        this.router.navigate(['welcome']);
+        
         this.snackBar.open('User successfully deleted.', "OK", {
           duration: 3000
         });
+        this.router.navigate(['welcome']);
       });
     }
   }
@@ -86,13 +87,14 @@ export class UserProfileComponent implements OnInit {
   deleteFavorite(_id: string, title: string): void {
     this.fetchApiData.deleteFavoriteMovie(_id).subscribe(() => {
       this.snackBar.open(
-        `${title} has been removed`, 'OK', {
+        `${title} has been removed from favorites.`, 'OK', {
           duration: 2000,
         }
       );
       setTimeout(function () {
         window.location.reload();
-      }, 1000);
+      }, 3500);
+      return this.getUser();
     });
   }
 

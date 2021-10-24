@@ -23,3 +23,25 @@ h4 {
 p {
     color:#cae4db;
 }
+
+.mat-card {
+    display: inline-block;
+    width: 40%;
+    margin: 2px;
+}
+
+img {
+    display: block;
+    height: 150px;
+    text-align: center;
+    margin: 5px auto;
+}
+
+.fav-title {
+    margin: 5px 0;
+    text-align: left;
+}
+
+.delete-account {
+    margin-top: 40px;
+}
