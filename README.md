@@ -55,6 +55,8 @@ This site uses Angular to build the client-side for an application based on its 
 
 ## Run App
 ng --serve open
+or 
+npm start
   
 ## Dependencies
 - @angular/animations: "~12.2.0",
