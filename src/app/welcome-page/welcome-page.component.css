@@ -30,15 +30,27 @@
 
 .welcome {
     text-align: center;
-    
 }
 
 .title {
-    margin-top: 200px;
+    background-image: url(../../movies.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 5px;
+    height: 300px;
+    margin-top: 0px;
     margin-bottom: 70px;
-    font-size: 40px;
+}
+
+.welcome-text {
+    position: relative;
+    top: 63px;
+    font-size: 50px;
+    line-height: 53px;
     text-align: center;
-    color: #ffffff;
+    color: #fff;
     font-weight: 600;
+    margin-top: 40px;
     -webkit-text-stroke: .5px #00303f;
 }
