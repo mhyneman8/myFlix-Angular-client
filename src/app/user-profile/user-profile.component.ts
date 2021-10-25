@@ -1,13 +1,12 @@
 // Problems: delete user does not redirect to Welcome
-//   after updating the profile view doesn't show any info
     // birthday isn't showing up
-    // favorite movies aren't showing up
 
 import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+// import {  } from '@angular/material/dialog';
 
 import { FormControl, Validators } from '@angular/forms';
 
@@ -30,7 +29,8 @@ export class UserProfileComponent implements OnInit {
     public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
     public router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    // public dialogRef: MatDialogRef<UserProfileComponent>
   ) { }
 
   ngOnInit(): void {
@@ -48,12 +48,16 @@ export class UserProfileComponent implements OnInit {
     if (confirm('This can\'t be undone, are you sure?')) {
       this.fetchApiData.deleteUser().subscribe((resp: any) => {
         localStorage.clear();
-        
+        console.log('deleteUser');
+        this.router.navigate(['welcome']);
         this.snackBar.open('User successfully deleted.', "OK", {
           duration: 3000
         });
-        this.router.navigate(['welcome']);
+        
       });
+    } else {
+      this.router.navigate(['profile']);
+      // this.dialogRef.close();
     }
   }
 

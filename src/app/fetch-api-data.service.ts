@@ -152,7 +152,7 @@ export class FetchApiDataService {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       })
-    }).pipe(map(this.extractResponseData),
+    }).pipe(
         catchError(this.handleError)
     );
   }
@@ -161,7 +161,7 @@ export class FetchApiDataService {
   deleteFavoriteMovie(_id: string): Observable<any> {
     const token = localStorage.getItem('token');
     const userName = localStorage.getItem('user');
-    return this.http.post(apiUrl + `users/${userName}/Movies/remove/${_id}`, {
+    return this.http.post(apiUrl + `users/${userName}/Movies/remove/${_id}`, {}, {
       headers: new HttpHeaders({
         Authorization: 'Bearer ' + token,
       })
