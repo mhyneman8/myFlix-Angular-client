@@ -29,6 +29,8 @@ export class NavBarComponent implements OnInit {
       this.snackBar.open("User has been logged out.", "OK", {
         duration: 2000,
       });
+    } else {
+      this.router.navigate(['movies']);
     }
   }
   

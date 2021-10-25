@@ -28,6 +28,7 @@ p {
     display: inline-block;
     width: 40%;
     margin: 2px;
+    z-index: 0;
 }
 
 img {
