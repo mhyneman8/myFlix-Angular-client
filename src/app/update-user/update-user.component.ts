@@ -37,7 +37,7 @@ export class UpdateUserComponent implements OnInit {
     });
     setTimeout(function () {
       window.location.reload();
-    }, 1250);
+    }, 3500);
   }
 
   cancel(): void {

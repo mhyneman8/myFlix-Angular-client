@@ -12,6 +12,7 @@
 
     <button
         (click)="openUpdateDialog()"
+        class="profile-btn"
     >
         Update User
     </button>
@@ -26,6 +27,7 @@
             <button  
                 aria-label="button removes from favorite movies"
                 (click)="deleteFavorite(favorite._id, favorite.Title)"
+                class="profile-btn"
             >
                 Remove
             </button>
@@ -35,7 +37,7 @@
     <button
         aria-label="button removes user's account"
         (click)="deleteUser()"
-        class="delete-account"
+        class="delete-account profile-btn"
     >
         Delete account
     </button>

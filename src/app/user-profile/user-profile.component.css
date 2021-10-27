@@ -8,7 +8,8 @@
     margin: 150px auto;
     text-align: center;
     background-color: #7a9d96;
-    width: 400px;
+    width: 70%;
+    max-width: 700px;
     border: 2px solid #cae4db;
     padding: 30px;
 }
@@ -16,18 +17,19 @@
 h4 {
     color: #00303f;
     margin: 5px auto;
-    margin-top: 15px;
+    margin-top: 20px;
     font-size: 20px;
 } 
 
 p {
     color:#cae4db;
+    font-size: 20px;
 }
 
 .mat-card {
     display: inline-block;
     width: 40%;
-    margin: 2px;
+    margin: 5px;
     z-index: 0;
 }
 
@@ -41,8 +43,15 @@ img {
 .fav-title {
     margin: 5px 0;
     text-align: left;
+    height: 45px;
+    color: #00303f;
 }
 
 .delete-account {
     margin-top: 40px;
+}
+
+.profile-btn {
+    background-color: #dcae1d;
+    padding: 5px;
 }

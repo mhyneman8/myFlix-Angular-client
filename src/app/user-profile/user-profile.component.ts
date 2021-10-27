@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 // import {  } from '@angular/material/dialog';
 
 import { FormControl, Validators } from '@angular/forms';
@@ -30,7 +30,7 @@ export class UserProfileComponent implements OnInit {
     public snackBar: MatSnackBar,
     public router: Router,
     public dialog: MatDialog,
-    // public dialogRef: MatDialogRef<UserProfileComponent>
+    public dialogRef: MatDialogRef<UserProfileComponent>
   ) { }
 
   ngOnInit(): void {
@@ -46,33 +46,30 @@ export class UserProfileComponent implements OnInit {
 
   deleteUser(): void {
     if (confirm('This can\'t be undone, are you sure?')) {
-      this.fetchApiData.deleteUser().subscribe((resp: any) => {
+      console.log('deleteUser');
+      this.fetchApiData.deleteUser().subscribe(() => {
+        
         localStorage.clear();
-        console.log('deleteUser');
         this.router.navigate(['welcome']);
         this.snackBar.open('User successfully deleted.', "OK", {
           duration: 3000
         });
-        
       });
-    } else {
-      this.router.navigate(['profile']);
-      // this.dialogRef.close();
     }
+    //  else {
+    //   this.router.navigate(['profile']);
+      // this.dialogRef.close();
+    // }
+  }
+
+  cancel(): void {
+    this.dialogRef.close();
   }
 
   editUser(): void {
-    // this.fetchApiData.editUser(this.userDetails).subscribe((result) => {
-
-
       this.snackBar.open('User successfully updated.', 'OK', {
         duration: 3000
       });
-    // }, (result) => {
-    //   this.snackBar.open(result, 'OK', {
-    //     duration: 3000
-    //   });
-    // });
   }
 
   favoriteMovies(): void {

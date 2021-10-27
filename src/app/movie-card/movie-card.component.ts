@@ -1,7 +1,3 @@
-
-// Problem: fill in favorite heart if its a favorite
-
-
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -84,7 +80,6 @@ export class MovieCardComponent implements OnInit {
         duration: 3000,
       })
       setTimeout(function () {
-       window.location.reload();
       }, 3500);
       return this.getUsersFavs();
     })

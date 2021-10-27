@@ -5,7 +5,8 @@
     <mat-card-content>
         <form>
             <mat-form-field>
-                <input
+                <input 
+                    matInput
                     [(ngModel)]="userDetails.Username"
                     type="text"
                     placeholder="Username"
@@ -16,6 +17,7 @@
 
             <mat-form-field>
                 <input
+                    matInput
                     [(ngModel)]="userDetails.Password"
                     type="Password"
                     placeholder="Password"
@@ -26,6 +28,7 @@
 
             <mat-form-field>
                 <input
+                    matInput
                     [(ngModel)]="userDetails.Email"
                     type="text"
                     placeholder="Email"
@@ -36,14 +39,14 @@
 
             <mat-form-field>
                 <input
+                    matInput
                     [(ngModel)]="userDetails.BirthDate"
                     type="date"
                     placeholder="Birthday"
-                    namd="Birthday"
+                    name="Birthday"
                     required
                 >
             </mat-form-field>
-
         </form>
     </mat-card-content>
     <mat-card-actions>
