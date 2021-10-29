@@ -7,12 +7,11 @@
 .mat-card {
     background-color: #7a9d96;
     text-align: center;
-    margin-top: 140px;
+    margin-top: 8.75rem;
 }
 
 .mat-card-title {
     color: #00303f;
-    /* justify-content: center; */
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
@@ -20,7 +19,7 @@
 
 .mat-card-header {
     justify-content: center;
-    height: 75px;
+    height: 4.6875rem;
     line-height: normal;
     text-align: center;
     position: relative;
@@ -29,14 +28,14 @@
 
 .mat-card-subtitle {
     color: #cae4db;
-    font-size: 12px;
+    font-size: 0.75rem;
     text-align: center;
 }
 
 .mat-card-actions {
     color: #cae4db;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 0.625rem;
 }
 
 .mat-button {
@@ -45,13 +44,13 @@
 }
 
 img {
-    width: 154px;
-    height: 218px;
-    margin-top: 10px;
+    width: 9.625rem;
+    height: 13.625rem;
+    margin-top: 0.625rem;
 }
 
 .mat-icon {
     float: right;
-    margin-right: 18px;
+    margin-right: 1.125rem;
     cursor: pointer;
 }

@@ -14,8 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDialogModule } from '@angular/material/dialog';
 
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -57,6 +57,7 @@ const appRoutes: Routes = [
     NavBarComponent,
     UpdateUserComponent,
     
+    
   ],
   imports: [
     BrowserModule,
@@ -71,9 +72,16 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     RouterModule.forRoot(appRoutes),
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    },
+    // DialogService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

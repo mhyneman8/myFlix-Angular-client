@@ -34,19 +34,20 @@ export class UpdateUserComponent implements OnInit {
   updateUser(): void {
     this.fetchApiData.editUser(this.userDetails).subscribe((result) => {
       this.dialogRef.close();
-      localStorage.setItem('user', result.user.Username);
+      localStorage.setItem('user', result.Username);
 
       this.snackBar.open('User updated.', 'OK', {
         duration: 3000
       });
     }, (result) => {
+      console.log(result);
       this.snackBar.open(result, 'OK', {
         duration: 3000
       });
     });
     setTimeout(function () {
       window.location.reload();
-    }, 1250);
+    }, 3500);
   }
 
   // cancel(): void {

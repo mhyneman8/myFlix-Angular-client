@@ -1,19 +1,12 @@
-// Problems: delete user does not redirect to Welcome
-//   after updating the profile view doesn't show any info
-    // birthday isn't showing up
-    // favorite movies aren't showing up
-    // update user button to open update dialog
-
 import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
 
-import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { formatDate } from '@angular/common';
 
 import { UpdateUserComponent } from '../update-user/update-user.component';
-import { WelcomePageComponent } from '../welcome-page/welcome-page.component'
 
 @Component({
   selector: 'app-user-profile',
@@ -39,7 +32,8 @@ export class UserProfileComponent implements OnInit {
     public fetchApiData: FetchApiDataService,
     public snackBar: MatSnackBar,
     public router: Router,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public dialogRef: MatDialogRef<UserProfileComponent>
   ) { }
 
   ngOnInit(): void {
@@ -52,7 +46,8 @@ export class UserProfileComponent implements OnInit {
   getUser(): void {
     this.fetchApiData.user().subscribe((result) => {
       this.users = result;
-      console.log(this.users);
+      console.log(result);
+      this.favoriteMovies();
     });
   }
 
@@ -61,7 +56,9 @@ export class UserProfileComponent implements OnInit {
    */
   deleteUser(): void {
     if (confirm('This can\'t be undone, are you sure?')) {
+      console.log('delete User before');
       this.fetchApiData.deleteUser().subscribe(() => {
+        console.log('delete user after')
         localStorage.clear();
         this.router.navigate(['welcome']);
         this.snackBar.open('User successfully deleted.', "OK", {
@@ -74,18 +71,19 @@ export class UserProfileComponent implements OnInit {
   /**
    * Opens dialog to update user
    */
+  
   editUser(): void {
-    // this.fetchApiData.editUser(this.userDetails).subscribe((result) => {
-
-
       this.snackBar.open('User successfully updated.', 'OK', {
         duration: 3000
       });
-    // }, (result) => {
-    //   this.snackBar.open(result, 'OK', {
-    //     duration: 3000
-    //   });
-    // });
+  }
+  
+  cancel(): void {
+    this.dialogRef.close();
+  }
+
+  formatDate(birthday: string) {
+    return formatDate(birthday, 'MM-dd-yyyy', 'en-US');
   }
 
   /**
@@ -116,13 +114,12 @@ export class UserProfileComponent implements OnInit {
   deleteFavorite(_id: string, title: string): void {
     this.fetchApiData.deleteFavoriteMovie(_id).subscribe(() => {
       this.snackBar.open(
-        `${title} has been removed`, 'OK', {
+        `${title} has been removed from favorites.`, 'OK', {
           duration: 2000,
         }
       );
-      setTimeout(function () {
-        window.location.reload();
-      }, 1000);
+
+      return this.getUser();
     });
   }
 
