@@ -6,11 +6,11 @@
 
 .main-page {
     background-color: #7a9d96;
-    width: 400px;
-    height: 500px;
+    width: 25rem;
+    height: 31.25rem;
     text-align: center;
-    margin: 105px auto;
-    padding: 10px;
+    margin: 6.5625rem auto;
+    padding: 0.625rem;
     border-radius: 5px;
     border: 2px solid #cae4db;
 }
@@ -19,9 +19,9 @@
     background-color: #dca31d;
     color: #00303f;
     border: 1px solid #00303f;
-    width: 119px;
-    height: 43px;
-    font-size: 18px;
+    width: 7.4375rem;
+    height: 2.6875rem;
+    font-size: 1.125rem;
 }
 
 .welcome-btns:hover {
@@ -38,19 +38,19 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 5px;
-    height: 300px;
-    margin-top: 0px;
-    margin-bottom: 70px;
+    height: 18.75rem;
+    margin-top: 0;
+    margin-bottom: 4.375rem;
 }
 
 .welcome-text {
     position: relative;
-    top: 63px;
-    font-size: 50px;
-    line-height: 53px;
+    top: 3.9375rem;
+    font-size: 3.125rem;
+    line-height: 3.3125rem;
     text-align: center;
     color: #fff;
     font-weight: 600;
-    margin-top: 40px;
+    margin-top: 2.5rem;
     -webkit-text-stroke: .5px #00303f;
 }

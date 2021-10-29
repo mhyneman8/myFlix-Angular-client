@@ -5,53 +5,53 @@
     mist #7a9d96 */
 
 .profile-body {
-    margin: 150px auto;
+    margin: 9.375rem auto;
     text-align: center;
     background-color: #7a9d96;
     width: 70%;
-    max-width: 700px;
+    max-width: 43.75rem;
     border: 2px solid #cae4db;
-    padding: 30px;
+    padding: 1.875rem;
 }
 
 h4 {
     color: #00303f;
-    margin: 5px auto;
-    margin-top: 20px;
-    font-size: 20px;
+    margin: 0.3125rem auto;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
 } 
 
 p {
     color:#cae4db;
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 
 .mat-card {
     display: inline-block;
     width: 40%;
-    margin: 5px;
+    margin: 0.3125rem;
     z-index: 0;
 }
 
 img {
     display: block;
-    height: 150px;
+    height: 9.375rem;
     text-align: center;
     margin: 5px auto;
 }
 
 .fav-title {
-    margin: 5px 0;
+    margin: 0.3125rem 0;
     text-align: left;
-    height: 45px;
+    height: 2.8125rem;
     color: #00303f;
 }
 
 .delete-account {
-    margin-top: 40px;
+    margin-top: 2.5rem;
 }
 
 .profile-btn {
     background-color: #dcae1d;
-    padding: 5px;
+    padding: 0.3125rem;
 }

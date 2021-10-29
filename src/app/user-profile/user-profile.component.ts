@@ -1,18 +1,12 @@
-// Problems: delete user does not redirect to Welcome
-    // birthday isn't showing up
-
 import { Component, Input, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { formatDate } from '@angular/common';
-// import {  } from '@angular/material/dialog';
-
-import { FormControl, Validators } from '@angular/forms';
 
 import { UpdateUserComponent } from '../update-user/update-user.component';
-import { WelcomePageComponent } from '../welcome-page/welcome-page.component'
 
 @Component({
   selector: 'app-user-profile',
@@ -58,10 +52,6 @@ export class UserProfileComponent implements OnInit {
         });
       });
     }
-    //  else {
-    //   this.router.navigate(['profile']);
-      // this.dialogRef.close();
-    // }
   }
 
   cancel(): void {

@@ -4,7 +4,6 @@
     cerulean #00303f
     mist #7a9d96 */
 
-
 mat-toolbar {
     position: fixed;
     top: 0;
@@ -17,20 +16,20 @@ mat-toolbar {
 
 span {
     margin-left: 10vw;
-    font-size: 30px;
+    font-size: 1.875rem;
     color: #00303f;
 }
 
 button {
     background-color: #dcae1d;
-    margin-left: 5px;
+    margin-left: 0.3125rem;
     border-radius: 3px;
 }
 .buttons {
     position: relative;
     float: right;
     left: 60vw;
-    right: 10px;
+    right: 0.625rem;
 }
 
 .dropdown {
@@ -42,7 +41,6 @@ button {
     position: absolute;
     right: 1vw;
     border-radius: 5px;
-    /* background-color: none; */
     min-width: 6.25rem;
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2);
     z-index: 2;
@@ -61,11 +59,11 @@ button {
    
     .dropdown-content button {
         color: #00303f;
-        padding: 4px;
+        padding: 0.25rem;
         text-decoration: none;
         display: block;
         text-align: right;
-        min-width: 65px;
+        min-width: 4.0625rem;
     }
 
     .dropdown-content button:hover {
