@@ -6,6 +6,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { formatDate } from '@angular/common';
 // import {  } from '@angular/material/dialog';
 
 import { FormControl, Validators } from '@angular/forms';
@@ -40,15 +41,16 @@ export class UserProfileComponent implements OnInit {
   getUser(): void {
     this.fetchApiData.user().subscribe((result) => {
       this.users = result;
+      console.log(result);
       this.favoriteMovies();
     });
   }
 
   deleteUser(): void {
     if (confirm('This can\'t be undone, are you sure?')) {
-      console.log('deleteUser');
+      console.log('delete User before');
       this.fetchApiData.deleteUser().subscribe(() => {
-        
+        console.log('delete user after')
         localStorage.clear();
         this.router.navigate(['welcome']);
         this.snackBar.open('User successfully deleted.', "OK", {
@@ -72,6 +74,10 @@ export class UserProfileComponent implements OnInit {
       });
   }
 
+  formatDate(birthday: string) {
+    return formatDate(birthday, 'yyyy-MM-dd', 'en-US');
+  }
+
   favoriteMovies(): void {
     this.fetchApiData.moviesList().subscribe((result: any) => {
       this.movies = result;
@@ -92,9 +98,7 @@ export class UserProfileComponent implements OnInit {
           duration: 2000,
         }
       );
-      setTimeout(function () {
-        window.location.reload();
-      }, 3500);
+
       return this.getUser();
     });
   }
