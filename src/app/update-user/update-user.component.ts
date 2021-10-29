@@ -10,7 +10,14 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 })
 export class UpdateUserComponent implements OnInit {
 
-  @Input() userDetails = { Username: '', Password: '', Email: '', BirthDate: ''};
+  /**
+   * Params for updating user
+   */
+  @Input() userDetails = { 
+    Username: '', 
+    Password: '', 
+    Email: '', 
+    BirthDate: ''};
   
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -21,6 +28,9 @@ export class UpdateUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Updates the user's information
+   */
   updateUser(): void {
     this.fetchApiData.editUser(this.userDetails).subscribe((result) => {
       this.dialogRef.close();
@@ -40,8 +50,8 @@ export class UpdateUserComponent implements OnInit {
     }, 3500);
   }
 
-  cancel(): void {
-    this.dialogRef.close();
-  }
+  // cancel(): void {
+  //   this.dialogRef.close();
+  // }
 
 }

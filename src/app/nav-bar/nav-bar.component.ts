@@ -19,6 +19,10 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * logs user out by clearing local storage 
+   * and routes to welcome screen
+   */
   logout(): void {
     if (confirm('Are you sure you want to log out?')) {
       localStorage.clear();

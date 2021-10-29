@@ -15,7 +15,9 @@ export class WelcomePageComponent implements OnInit {
 
   ngOnInit(): void {  }
 
-  // function that will open the dialog when the signup button is clicked
+  /**
+   * opens the registration dialog when the signup button is clicked
+   */
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
       // assigning the dialog a width
@@ -23,6 +25,9 @@ export class WelcomePageComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens login dialog when the login button is clicked
+   */
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
       width: '280px'

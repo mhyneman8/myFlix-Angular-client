@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 })
 export class UserLoginFormComponent implements OnInit {
 
+  /**
+   * Params for logging in user
+   */
   @Input() userDetails = { Username: '', Password: '' };
 
   constructor(
@@ -23,6 +26,10 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Logs in user
+   * routes to movie screen
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userDetails).subscribe((result) => {
       this.dialogRef.close();
