@@ -75,7 +75,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   formatDate(birthday: string) {
-    return formatDate(birthday, 'yyyy-MM-dd', 'en-US');
+    return formatDate(birthday, 'MM-dd-yyyy', 'en-US');
   }
 
   favoriteMovies(): void {
