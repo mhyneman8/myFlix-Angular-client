@@ -59,12 +59,20 @@ export class UserProfileComponent implements OnInit {
       console.log('delete User before');
       this.fetchApiData.deleteUser().subscribe(() => {
         console.log('delete user after')
-        localStorage.clear();
-        this.router.navigate(['welcome']);
         this.snackBar.open('User successfully deleted.', "OK", {
           duration: 3000
         });
-      });
+        
+      }, (response => {
+        console.log(response);
+        this.snackBar.open(response, 'OK', {duration: 2000});
+        localStorage.clear();
+        this.router.navigate(['welcome']).then(() => {
+          window.location.reload();
+        });
+        
+      })
+      );
     }
   }
 

@@ -50,8 +50,4 @@ export class UpdateUserComponent implements OnInit {
     }, 3500);
   }
 
-  // cancel(): void {
-  //   this.dialogRef.close();
-  // }
-
 }

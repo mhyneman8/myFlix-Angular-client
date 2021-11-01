@@ -1,0 +1,216 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>my-flix-angular-client documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">my-flix-angular-client documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="angular-myflix">Angular myFlix</h1>
+<h2 id="client-side">Client-Side</h2>
+<p>This site uses Angular to build the client-side for an application based on its existing server-side REST API.</p>
+<h2 id="authors">Authors</h2>
+<ul>
+<li><a href="https://www.github.com/mhyneman8">@MalloryHyneman</a></li>
+</ul>
+<h2 id="tech-stack">Tech Stack</h2>
+<p><strong>Client:</strong> Angular, Angular Material,</p>
+<p><strong>Server:</strong> Node, NPM</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Display welcome view where users can login or register</li>
+<li>Once authenticated, the user can view all movies</li>
+<li>Users can click a movie and get more details on that movie</li>
+<li>Single movie view gives buttons for more information on Genre and Director## Color Reference</li>
+</ul>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Color</th>
+<th>Hex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary Color</td>
+<td><img src="https://via.placeholder.com/10/00303f?text=+" alt="#00303f" class="img-responsive"> #00303f</td>
+</tr>
+<tr>
+<td>Secondary Color</td>
+<td><img src="https://via.placeholder.com/10/7a9d96?text=+" alt="#7a9d96" class="img-responsive"> #7a9d96</td>
+</tr>
+<tr>
+<td>Tertiary Color</td>
+<td><img src="https://via.placeholder.com/10/cae4db?text=+" alt="#cae4db" class="img-responsive"> #cae4db</td>
+</tr>
+<tr>
+<td>Accent Color</td>
+<td><img src="https://via.placeholder.com/10/dcae1d?text=+" alt="#dcae1d" class="img-responsive"> #dcae1d</td>
+</tr>
+</tbody>
+</table>
+<h2 id="api-reference">API Reference</h2>
+<h4 id="get-all-items">Get all items</h4>
+<div><pre class="line-numbers"><code class="language-http">  GET /myflix788.herokuapp.com/movies</code></pre></div><table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>none</code></td>
+<td align="left"><code>JSON</code></td>
+<td align="left">Returns a list of All movies to the user</td>
+</tr>
+</tbody>
+</table>
+<h4 id="get-item">Get item</h4>
+<div><pre class="line-numbers"><code class="language-http">  GET /myflix788.herokuapp.com/movies/${id}</code></pre></div><table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>id</code></td>
+<td align="left"><code>string</code></td>
+<td align="left"><strong>Required</strong>. Id of item to fetch</td>
+</tr>
+</tbody>
+</table>
+<h2 id="run-app">Run App</h2>
+<p>ng --serve open
+or 
+npm start</p>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li>@angular/animations: &quot;~12.2.0&quot;,</li>
+<li>@angular/cdk: &quot;^12.2.6&quot;,</li>
+<li>@angular/common: &quot;~12.2.0&quot;,</li>
+<li>@angular/compiler: &quot;~12.2.0&quot;,</li>
+<li>@angular/core: &quot;~12.2.0&quot;,</li>
+<li>@angular/forms: &quot;~12.2.0&quot;,</li>
+<li>@angular/material: &quot;^12.2.6&quot;,</li>
+<li>@angular/platform-browser: &quot;~12.2.0&quot;,</li>
+<li>@angular/platform-browser-dynamic: &quot;~12.2.0&quot;,</li>
+<li>@angular/router: &quot;~12.2.0&quot;,</li>
+<li>rxjs: &quot;~6.6.0&quot;,</li>
+<li>tslib: &quot;^2.3.0&quot;,</li>
+<li>zone.js: &quot;~0.11.4&quot;</li>
+</ul>
+<h2 id="dev-dependencies">Dev Dependencies</h2>
+<ul>
+<li>@angular-devkit/build-angular: &quot;~12.2.6&quot;,</li>
+<li>@angular/cli: &quot;~12.2.6&quot;,</li>
+<li>@angular/compiler-cli: &quot;~12.2.0&quot;,</li>
+<li>@types/jasmine: &quot;~3.8.0&quot;,</li>
+<li>@types/node: &quot;^12.11.1&quot;,</li>
+<li>angular-cli-ghpages: &quot;^1.0.0-rc.2&quot;,</li>
+<li>jasmine-core: &quot;~3.8.0&quot;,</li>
+<li>karma: &quot;~6.3.0&quot;,</li>
+<li>karma-chrome-launcher: &quot;~3.1.0&quot;,</li>
+<li>karma-coverage: &quot;~2.0.3&quot;,</li>
+<li>karma-jasmine: &quot;~4.0.0&quot;,</li>
+<li>karma-jasmine-html-reporter: &quot;~1.7.0&quot;,</li>
+<li>typescript: &quot;~4.3.5&quot;</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
