@@ -3,10 +3,15 @@
 ## Client-Side
 
 This site uses Angular to build the client-side for an application based on its existing server-side REST API.
+
 ## Authors
 
 - [@MalloryHyneman](https://www.github.com/mhyneman8)
 
+
+## Live Page
+
+https://mhyneman8.github.io/myFlix-Angular-client/welcome
   
 ## Tech Stack
 
